@@ -1,0 +1,17 @@
+D:\Dima\Учеба\Актуальное\ЧМИ\ResumeSorting\ResumeSorting\bin\Debug\WordResume\Резюме_1.docx
+D:\Dima\Учеба\Актуальное\ЧМИ\ResumeSorting\ResumeSorting\bin\Debug\WordResume\Резюме_2.docx
+D:\Dima\Учеба\Актуальное\ЧМИ\ResumeSorting\ResumeSorting\bin\Debug\WordResume\Резюме_3.docx
+D:\Dima\Учеба\Актуальное\ЧМИ\ResumeSorting\ResumeSorting\bin\Debug\ResumeSorting.exe.config
+D:\Dima\Учеба\Актуальное\ЧМИ\ResumeSorting\ResumeSorting\bin\Debug\ResumeSorting.exe
+D:\Dima\Учеба\Актуальное\ЧМИ\ResumeSorting\ResumeSorting\bin\Debug\ResumeSorting.pdb
+D:\Dima\Учеба\Актуальное\ЧМИ\ResumeSorting\ResumeSorting\obj\Debug\ResumeSorting.csprojAssemblyReference.cache
+D:\Dima\Учеба\Актуальное\ЧМИ\ResumeSorting\ResumeSorting\obj\Debug\ResumeSorting.csproj.ResolveComReference.cache
+D:\Dima\Учеба\Актуальное\ЧМИ\ResumeSorting\ResumeSorting\obj\Debug\ResumeSorting.Form1.resources
+D:\Dima\Учеба\Актуальное\ЧМИ\ResumeSorting\ResumeSorting\obj\Debug\ResumeSorting.Properties.Resources.resources
+D:\Dima\Учеба\Актуальное\ЧМИ\ResumeSorting\ResumeSorting\obj\Debug\ResumeSorting.csproj.GenerateResource.cache
+D:\Dima\Учеба\Актуальное\ЧМИ\ResumeSorting\ResumeSorting\obj\Debug\ResumeSorting.csproj.CoreCompileInputs.cache
+D:\Dima\Учеба\Актуальное\ЧМИ\ResumeSorting\ResumeSorting\obj\Debug\ResumeSorting.exe
+D:\Dima\Учеба\Актуальное\ЧМИ\ResumeSorting\ResumeSorting\obj\Debug\ResumeSorting.pdb
+D:\Dima\Учеба\Актуальное\ЧМИ\ResumeSorting\ResumeSorting\bin\Debug\DocumentFormat.OpenXml.dll
+D:\Dima\Учеба\Актуальное\ЧМИ\ResumeSorting\ResumeSorting\bin\Debug\DocumentFormat.OpenXml.xml
+D:\Dima\Учеба\Актуальное\ЧМИ\ResumeSorting\ResumeSorting\obj\Debug\ResumeSorting.csproj.CopyComplete
