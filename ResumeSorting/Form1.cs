@@ -17,7 +17,8 @@ namespace ResumeSorting
 {
     public partial class Form1 : Form
     {
-        Dictionary<string, string> requestsKeys = new Dictionary<string, string>(6); 
+        
+        WordWorker fileReader;
 
         public Form1()
         {
@@ -26,21 +27,33 @@ namespace ResumeSorting
 
         private void button1_Click(object sender, EventArgs e)
         {
-            requestsKeys.Add(labelFirstName.Text, textBoxFirstName.Text);
-            requestsKeys.Add(labelSecondName.Text, textBoxSecondName.Text);
-            requestsKeys.Add(labelThirdName.Text, textBoxThirdName.Text);
-            requestsKeys.Add(labelBirth.Text, textBoxBirth.Text);
-            requestsKeys.Add(labelEducation.Text, textBoxEducation.Text);
-            requestsKeys.Add(labelWorkExperience.Text, textBoxWorkExperience.Text);
+            Dictionary<string, string[]> requestsKeys = new Dictionary<string, string[]>(6);
+            try
+            {
+                requestsKeys.Add(labelFirstName.Text, textBoxFirstName.Text.Split(','));
+                requestsKeys.Add(labelSecondName.Text, textBoxSecondName.Text.Split(','));
+                requestsKeys.Add(labelThirdName.Text, textBoxThirdName.Text.Split(','));
+                requestsKeys.Add(labelBirth.Text, textBoxBirth.Text.Split(','));
+                requestsKeys.Add(labelEducation.Text, textBoxEducation.Text.Split(','));
+                requestsKeys.Add(labelWorkExperience.Text, textBoxWorkExperience.Text.Split(','));
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            
+            List<string> filteredResumes = fileReader.FilteringResume(requestsKeys);
+            ShowFilteredResumes(filteredResumes);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             string path = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
             //string[] pathsWord = new string[3] { path + @"\WordResume\Резюме_1.docx", path + @"\WordResume\Резюме_2.docx", path + @"\WordResume\Резюме_3.docx"};
-            string[] pathsWord = Directory.GetFiles(path + @"\WordResume\");
+            string[] filesPath = Directory.GetFiles(path + @"\WordResume\");
 
-            WordWorker fileReader = new WordWorker(pathsWord);
+            fileReader = new WordWorker(filesPath);
 
             try
             {
@@ -60,6 +73,15 @@ namespace ResumeSorting
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
+        private void ShowFilteredResumes(List<string> resumesPath)
+        {
+            label2.Text = "";
+;           for (int i = 0; i < resumesPath.Count; i++)
+            {
+                label2.Text += resumesPath[i] + "\n";
             }
         }
     }

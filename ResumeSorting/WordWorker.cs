@@ -51,5 +51,63 @@ namespace ResumeSorting
             TakeFilesFields();
             return peopleInfoDict;
         }
+
+        public List<string> FilteringResume(Dictionary<string, string[]> requestsKeys)
+        {
+            Dictionary<string, string[]> filteredKeys = FilteringKeys(requestsKeys);
+            List<string> filteredResumes = new List<string>();
+
+            for (int i = 0; i < peopleInfoDict.Length; i++)
+            {
+                bool correctAll = false;
+                Dictionary<string, string> person = peopleInfoDict[i];
+
+                foreach (var key in filteredKeys)
+                {
+                    bool correctField = false;
+                    string fieldKey = key.Key;
+                    string[] fieldValue = key.Value;
+
+                    for (int j = 0; j < fieldValue.Length; j++)
+                    {
+                        string value = fieldValue[j].ToLower();
+                        if (!person[fieldKey].ToLower().Contains(value))
+                            correctField = false;
+                        else
+                        {
+                            correctField = true;
+                            break;
+                        }
+                            
+                    }
+                    if (correctField)
+                        correctAll = true;
+                    else
+                    {
+                        correctAll = false;
+                        break;
+                    }
+                }
+                if (correctAll)
+                    filteredResumes.Add(files[i]);
+            }
+
+            return filteredResumes;
+        }
+
+        private Dictionary<string, string[]> FilteringKeys(Dictionary<string, string[]> requestsKeys)
+        {
+            Dictionary<string, string[]> filteredKeys = new Dictionary<string, string[]>();
+
+            foreach (var key in requestsKeys)
+            {
+                if (key.Value[0] == "" || key.Value[0] == " ")
+                    continue;
+                filteredKeys.Add(key.Key, key.Value);
+
+            }
+
+            return filteredKeys;
+        }
     }
 }

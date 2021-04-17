@@ -43,6 +43,7 @@ namespace ResumeSorting
             this.labelBirth = new System.Windows.Forms.Label();
             this.labelThirdName = new System.Windows.Forms.Label();
             this.labelSecondName = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -60,7 +61,7 @@ namespace ResumeSorting
             this.label1.Location = new System.Drawing.Point(275, 25);
             this.label1.MaximumSize = new System.Drawing.Size(1000, 1000);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(483, 388);
+            this.label1.Size = new System.Drawing.Size(483, 294);
             this.label1.TabIndex = 1;
             // 
             // textBoxFirstName
@@ -160,11 +161,19 @@ namespace ResumeSorting
             this.labelSecondName.Text = "Фамилия";
             this.labelSecondName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(275, 355);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(483, 86);
+            this.label2.TabIndex = 14;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.labelSecondName);
             this.Controls.Add(this.labelThirdName);
             this.Controls.Add(this.labelBirth);
@@ -203,6 +212,7 @@ namespace ResumeSorting
         private System.Windows.Forms.Label labelBirth;
         private System.Windows.Forms.Label labelThirdName;
         private System.Windows.Forms.Label labelSecondName;
+        private System.Windows.Forms.Label label2;
     }
 }
 
