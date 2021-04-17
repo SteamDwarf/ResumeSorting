@@ -14,11 +14,12 @@ namespace ResumeSorting
     {
         //WordprocessingDocument WD;
         private string[] files;
-        private Dictionary<string, string>[] peopleInfoDict = new Dictionary<string, string>[3];
+        private Dictionary<string, string>[] peopleInfoDict;
 
         public WordWorker(string[] filesName)
         {
             files = filesName;
+            peopleInfoDict = new Dictionary<string, string>[files.Length];
         }
 
         private void TakeFilesFields()
@@ -52,10 +53,10 @@ namespace ResumeSorting
             return peopleInfoDict;
         }
 
-        public List<string> FilteringResume(Dictionary<string, string[]> requestsKeys)
+        public List<dynamic[]> FilteringResume(Dictionary<string, List<string>> requestsKeys)
         {
-            Dictionary<string, string[]> filteredKeys = FilteringKeys(requestsKeys);
-            List<string> filteredResumes = new List<string>();
+            Dictionary<string, List<string>> filteredKeys = FilteringKeys(requestsKeys);
+            List<dynamic[]> filteredResumes = new List<dynamic[]>();
 
             for (int i = 0; i < peopleInfoDict.Length; i++)
             {
@@ -66,9 +67,9 @@ namespace ResumeSorting
                 {
                     bool correctField = false;
                     string fieldKey = key.Key;
-                    string[] fieldValue = key.Value;
+                    List<string> fieldValue = key.Value;
 
-                    for (int j = 0; j < fieldValue.Length; j++)
+                    for (int j = 0; j < fieldValue.Count; j++)
                     {
                         string value = fieldValue[j].ToLower();
                         if (!person[fieldKey].ToLower().Contains(value))
@@ -89,20 +90,56 @@ namespace ResumeSorting
                     }
                 }
                 if (correctAll)
-                    filteredResumes.Add(files[i]);
+                {
+                    dynamic[] resume = {files[i], i};
+                    filteredResumes.Add(resume);
+                }
             }
 
             return filteredResumes;
         }
 
-        private Dictionary<string, string[]> FilteringKeys(Dictionary<string, string[]> requestsKeys)
+        private Dictionary<string, List<string>> FilteringKeys(Dictionary<string, List<string>> requestsKeys)
         {
-            Dictionary<string, string[]> filteredKeys = new Dictionary<string, string[]>();
+            Dictionary<string, List<string>> filteredKeys = new Dictionary<string, List<string>>();
 
             foreach (var key in requestsKeys)
             {
+                int valueLength = key.Value.Count;
+
                 if (key.Value[0] == "" || key.Value[0] == " ")
                     continue;
+
+                for (int i = 0; i < valueLength; i++)
+                {
+                    switch(key.Value[i].ToLower().Trim())
+                    {
+                        case "отсутствует":
+                            key.Value.Add("нет");
+                            break;
+                        case "нет":
+                            key.Value.Add("отсутствует");
+                            break; 
+                        case "высшее":
+                            key.Value.Add("высших");
+                            break;
+                        case "высших":
+                            key.Value.Add("высшее");
+                            break;
+                        case "есть":
+                            key.Value.Add("1");
+                            key.Value.Add("2");
+                            key.Value.Add("3");
+                            key.Value.Add("4");
+                            key.Value.Add("5");
+                            key.Value.Add("6");
+                            key.Value.Add("7");
+                            key.Value.Add("8");
+                            key.Value.Add("9");
+                            key.Value.Add("10");
+                            break;
+                    }
+                }
                 filteredKeys.Add(key.Key, key.Value);
 
             }

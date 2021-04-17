@@ -30,7 +30,6 @@ namespace ResumeSorting
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.textBoxFirstName = new System.Windows.Forms.TextBox();
             this.textBoxWorkExperience = new System.Windows.Forms.TextBox();
             this.textBoxEducation = new System.Windows.Forms.TextBox();
@@ -43,26 +42,20 @@ namespace ResumeSorting
             this.labelBirth = new System.Windows.Forms.Label();
             this.labelThirdName = new System.Windows.Forms.Label();
             this.labelSecondName = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(39, 332);
+            this.button1.Location = new System.Drawing.Point(15, 332);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(113, 35);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
+            this.button1.Text = "Найти";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(275, 25);
-            this.label1.MaximumSize = new System.Drawing.Size(1000, 1000);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(483, 294);
-            this.label1.TabIndex = 1;
             // 
             // textBoxFirstName
             // 
@@ -161,19 +154,47 @@ namespace ResumeSorting
             this.labelSecondName.Text = "Фамилия";
             this.labelSecondName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label2
+            // button2
             // 
-            this.label2.Location = new System.Drawing.Point(275, 355);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(483, 86);
-            this.label2.TabIndex = 14;
+            this.button2.Location = new System.Drawing.Point(15, 373);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(113, 40);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "Открыть папку";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.richTextBox1.Location = new System.Drawing.Point(665, 35);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.richTextBox1.Size = new System.Drawing.Size(310, 445);
+            this.richTextBox1.TabIndex = 19;
+            this.richTextBox1.Text = "";
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.richTextBox2.Location = new System.Drawing.Point(274, 35);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.ReadOnly = true;
+            this.richTextBox2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.richTextBox2.Size = new System.Drawing.Size(340, 445);
+            this.richTextBox2.TabIndex = 20;
+            this.richTextBox2.Text = "";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label2);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(1004, 510);
+            this.Controls.Add(this.richTextBox2);
+            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.labelSecondName);
             this.Controls.Add(this.labelThirdName);
             this.Controls.Add(this.labelBirth);
@@ -186,7 +207,6 @@ namespace ResumeSorting
             this.Controls.Add(this.textBoxEducation);
             this.Controls.Add(this.textBoxWorkExperience);
             this.Controls.Add(this.textBoxFirstName);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -199,7 +219,6 @@ namespace ResumeSorting
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxFirstName;
         private System.Windows.Forms.TextBox textBoxWorkExperience;
         private System.Windows.Forms.TextBox textBoxEducation;
@@ -212,7 +231,9 @@ namespace ResumeSorting
         private System.Windows.Forms.Label labelBirth;
         private System.Windows.Forms.Label labelThirdName;
         private System.Windows.Forms.Label labelSecondName;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox richTextBox2;
     }
 }
 
